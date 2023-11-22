@@ -1,0 +1,7 @@
+{
+  "name": "tvmaze-sergiogd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
