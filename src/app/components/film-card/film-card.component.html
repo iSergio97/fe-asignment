@@ -1,0 +1,16 @@
+<ion-card *ngIf="show">
+  <img [src]="(show.image && show.image.medium) ? show.image.medium : 'assets/images/default.jpg'"
+    [alt]="show.name + '_image.jpg'">
+
+  <ion-card-header>
+    <ion-card-title> {{show.name}} {{show.rating.average ? show.rating.average : ''}} <ion-icon name='star-outline'
+        *ngIf="show.rating.average"></ion-icon></ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content
+    [innerHTML]="show.summary ? show.summary.length > 150 ? (show.summary.substring(0, 150) + '...') : show.summary : 'There is no info about this film...'"></ion-card-content>
+</ion-card>
+
+<h1 *ngIf="!show">
+  Loading... Please wait
+</h1>

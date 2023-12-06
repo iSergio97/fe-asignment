@@ -1,0 +1,68 @@
+<ion-content>
+  <app-header></app-header>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="10" sizeMd="10" sizeSm="8" sizeXs="6"></ion-col>
+      <ion-col sizeLg="2" sizeMd="2" sizeSm="4" sizeXs="6">
+        <app-search></app-search>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-card *ngIf="show">
+    <h1 style="text-align: center;">{{show.name}} ({{show.premiered | date: 'dd/MM/yyyy'}} - {{show.ended !== null ? (show.ended  | date: 'dd/MM/yyyy'): '' }})</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col sizeXl="4" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
+          <img [src]="show.image && show.image.original ? show.image.original : 'assets/images/default.jpg'"
+            [alt]="show.name + '_image_not_found'" id="show_image">
+          <ion-list>
+            <ion-item style="display: inline-block;" class="genre" *ngFor="let genre of show.genres">
+              {{genre}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col sizeXl="8" sizeLg="8" sizeMd="6" sizeSm="12" sizeXs="12">
+          <ion-list>
+            <ion-list-header>
+              <ion-item [innerHTML]="show.summary"></ion-item>
+            </ion-list-header>
+            <ion-item>
+              <ion-select placeholder="Season 1" [formControl]="selectedSeason" [change]="getEpisodesBySeasson()"
+                interface="popover" justify="end">
+                <ion-select-option *ngFor="let season of seasons" [value]="season">
+                  Season {{season}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngFor="let episode of episodesBySeason">
+              <ion-row>
+                <ion-col sizeXl="3" sizeLg="4" sizeMd="3" sizeSm="12" sizeXs="12">
+                  <img
+                    [src]="episode.image && episode.image.medium ? episode.image.medium : 'assets/images/default.jpg'"
+                    [alt]="episode.name + '_no_image'"
+                    class="episode_image"
+                    >
+                </ion-col>
+                <ion-col sizeXl="9" sizeLg="8" sizeMd="9" sizeSm="12" sizeXs="12">
+                  <ion-item>{{episode.name}} ({{episode.airdate | date: 'dd/MM/yyyy'}}) {{episode.rating.average ? episode.rating.average : ''}} <ion-icon name='star-outline' *ngIf="episode.rating.average"></ion-icon></ion-item>
+                  <ion-item>
+                    <ion-label [innerHTML]="episode.summary" class="ion-text-wrap"></ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card *ngIf="!show && !errorMessage">
+    Cargando...
+  </ion-card>
+
+  <ion-card *ngIf="errorMessage">
+    {{errorMessage}}
+  </ion-card>
+</ion-content>

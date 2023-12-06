@@ -1,0 +1,44 @@
+<ion-content>
+    <app-header></app-header>
+    <br>
+    <ion-grid>
+        <ion-row>
+            <ion-col sizeLg="10" sizeMd="10" sizeSm="8" sizeXs="6"></ion-col>
+            <ion-col sizeLg="2" sizeMd="2" sizeSm="4" sizeXs="6">
+                <app-search></app-search>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <br>
+    <h1 *ngIf="loading">
+        Loading... Please wait
+    </h1>
+    <div *ngIf="!loading">
+        <ion-grid>
+            <h3> Love </h3>
+            <ion-row justify-content-center class="films">
+                <ion-col *ngFor="let show of love" sizeLg="3" sizeMd="3" sizeSm="6" sizeXs="12">
+                    <app-film-card [show]="show" [routerLink]="['/film', show.id]"></app-film-card>
+                </ion-col>
+            </ion-row>
+            <h3> Sport </h3>
+            <ion-row justify-content-center class="films">
+                <ion-col *ngFor="let show of sport" sizeLg="3" sizeMd="3" sizeSm="12" sizeXs="12">
+                    <app-film-card [show]="show" [routerLink]="['/film', show.id]"></app-film-card>
+                </ion-col>
+            </ion-row>
+            <h3> Horror </h3>
+            <ion-row justify-content-center class="films">
+                <ion-col *ngFor="let show of horror" sizeLg="3" sizeMd="3" sizeSm="12" sizeXs="12">
+                    <app-film-card [show]="show" [routerLink]="['/film', show.id]"></app-film-card>
+                </ion-col>
+            </ion-row>
+            <h3> Action </h3>
+            <ion-row justify-content-center class="films">
+                <ion-col *ngFor="let show of action" sizeLg="3" sizeMd="3" sizeSm="12" sizeXs="12">
+                    <app-film-card [show]="show" [routerLink]="['/film', show.id]"></app-film-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

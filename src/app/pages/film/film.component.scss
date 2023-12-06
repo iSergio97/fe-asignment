@@ -1,0 +1,26 @@
+.genre {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: .01786em;
+    text-transform: none;
+    -webkit-font-smoothing: auto;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 0;
+    padding: 0 0.75rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: none;
+}
+
+ion-icon {
+    color: yellow;
+}
