@@ -27,4 +27,8 @@ export class SearchComponent {
     this.movieFinder.reset('');
   }
 
+  goToFilm(event: Event) {
+    console.log(event);
+  }
+
 }

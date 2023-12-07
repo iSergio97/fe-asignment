@@ -19,7 +19,7 @@ export class FilmsService {
   }
 
   getFilmById(id: number): Observable<Show> {
-    let url = `${this.baseURL}/singlesearch/shows/${id}?embed=episodes`;
+    let url = `${this.baseURL}/shows/${id}?embed=episodes`;
     return this.http.get<Show>(url).pipe(first());
   }
 

@@ -1,5 +1,5 @@
 <ion-item>
   <ion-input placeholder="Buscador" [formControl]="movieFinder" />
-  <ion-icon name="search-outline" style="cursor: pointer;" (click)="navigateToFilm()" (keyup.enter)="navigateToFilm()"></ion-icon>
+  <ion-icon name="search-outline" style="cursor: pointer;" (click)="navigateToFilm()" (ionInput)="goToFilm($event)"></ion-icon>
 </ion-item>
 <ion-text *ngIf="errorMessage !== ''" style="color: red;"> {{errorMessage}}</ion-text>

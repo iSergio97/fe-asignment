@@ -42,7 +42,7 @@ describe('FilmCardComponent', () => {
       error: console.error
     });
 
-    const request = controller.expectOne('https://api.tvmaze.com/singlesearch/shows/41007?embed=episodes');
+    const request = controller.expectOne('https://api.tvmaze.com/shows/41007?embed=episodes');
     request.flush(lokiShow);
     controller.verify();
 
@@ -56,7 +56,7 @@ describe('FilmCardComponent', () => {
       error: console.error
     });
 
-    const request = controller.expectOne('https://api.tvmaze.com/singlesearch/shows/41007?embed=episodes');
+    const request = controller.expectOne('https://api.tvmaze.com/shows/41007?embed=episodes');
     request.flush(lokiShow);
     controller.verify();
 
@@ -69,7 +69,7 @@ describe('FilmCardComponent', () => {
       error: console.error
     });
 
-    const request = controller.expectOne('https://api.tvmaze.com/singlesearch/shows/41007?embed=episodes');
+    const request = controller.expectOne('https://api.tvmaze.com/shows/41007?embed=episodes');
     request.flush(lokiShow);
     controller.verify();
 
@@ -82,7 +82,7 @@ describe('FilmCardComponent', () => {
       error: console.error
     });
 
-    const request = controller.expectOne('https://api.tvmaze.com/singlesearch/shows/41007?embed=episodes');
+    const request = controller.expectOne('https://api.tvmaze.com/shows/41007?embed=episodes');
     request.flush(lokiShow);
     controller.verify();
 
@@ -95,7 +95,7 @@ describe('FilmCardComponent', () => {
       error: console.error
     });
 
-    const request = controller.expectOne('https://api.tvmaze.com/singlesearch/shows/41007?embed=episodes');
+    const request = controller.expectOne('https://api.tvmaze.com/shows/41007?embed=episodes');
     request.flush(lokiShow);
     controller.verify();
 
