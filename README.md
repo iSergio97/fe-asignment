@@ -22,6 +22,15 @@ In the same folder, after the instalation, we just need to execute the next comm
 npx ionic serve --external --configuration=production
 ```
 
+## Testing
+Similar to the previous point, we can just lunch the tests. Just execute this command:
+
+```bash
+ng test
+```
+
+A web browser (usually, Google Chrome) will pop up and show the results of the tests.
+
 ## Request Limit
 
 The API only allow 20 request every 10 seconds
