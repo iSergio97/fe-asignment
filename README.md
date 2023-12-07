@@ -41,3 +41,6 @@ Angular: 17.0.0
 Ionic: 7.1.5
 NPM: 10.2.3
 NodeJS: 18.18.2
+
+## Why the use of Angular + Ionic
+Angular is the main framework for web development, plus with the aditoin of Ionic, it become the main combination of web development + mobile development (responsive) only adding the Ionic tags instead of the big ammount of lines of CSS code that we should have needed to achieve a similar result. 
