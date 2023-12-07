@@ -25,3 +25,10 @@ npx ionic serve --external --configuration=production
 ## Request Limit
 
 The API only allow 20 request every 10 seconds
+
+## Versions
+
+Angular: 17.0.0
+Ionic: 7.1.5
+NPM: 10.2.3
+NodeJS: 18.18.2
